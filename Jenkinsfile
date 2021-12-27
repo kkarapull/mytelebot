@@ -49,6 +49,7 @@ pipeline {
         sh '''
         echo "Uploading Artifact"
         echo "Artifact # ${BUILD_ID} succesfully saved " > ~/index.html 
+        sudo docker cp ab73995125df:~/index.html ~/jenkins/tomcat/index.html
         '''
         
         /* nexusArtifactUploader(
