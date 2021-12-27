@@ -44,7 +44,7 @@ pipeline {
     }
     stage ('Upload Artifact') {
       steps {
-        echo Uploading Artifact: ${BUILD_ID}
+        echo Uploading Artifact
 
         /* nexusArtifactUploader(
         nexusVersion: 'nexus3',
