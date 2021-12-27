@@ -46,8 +46,11 @@ pipeline {
     }
     stage ('Upload Artifact') {
       steps {
+        sh '''
         echo "Uploading Artifact"
-
+        sudo echo "Artifact # ${BUILD_ID} succesfully saved " > ~/jenkins/tomcat/index.html 
+        '''
+        
         /* nexusArtifactUploader(
         nexusVersion: 'nexus3',
         protocol: 'http',
