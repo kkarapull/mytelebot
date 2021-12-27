@@ -38,7 +38,7 @@ pipeline {
         sh 'mvn -f MyWebApp/pom.xml sonar:sonar' */
         }
       }
-    }
+    
     stage ('JaCoCo') {
       steps {
       jacoco()
