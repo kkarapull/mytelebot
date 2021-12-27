@@ -48,7 +48,7 @@ pipeline {
       steps {
         sh '''
         echo "Uploading Artifact"
-        sudo echo "Artifact # ${BUILD_ID} succesfully saved " > ~/jenkins/tomcat/index.html 
+        sudo echo "Artifact # ${BUILD_ID} succesfully saved " > /usr/local/tomcat/webapps/test/index.html 
         '''
         
         /* nexusArtifactUploader(
