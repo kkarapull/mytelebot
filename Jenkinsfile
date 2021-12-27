@@ -8,24 +8,26 @@ pipeline {
     stage ('Build with PyTest') {
       steps {
       
+        sh ''' 
         py.test test_calc.py -v
         py.test test_person.py -v   
 
         echo SUCCESS
         echo Build Number is: ${BUILD_ID}
+        '''
         
         //sh 'mvn clean install -f MyWebApp/pom.xml'
       }
     }
     stage ('Build with UnitTest') {
       steps {
-      
+        sh '''
         python test_person.py -v
         python test_calc.py -v
 
         echo SUCCESS
         echo Build Number is: ${BUILD_ID}
-        
+        '''
         //sh 'mvn clean install -f MyWebApp/pom.xml'
       }
     }
@@ -84,4 +86,3 @@ pipeline {
     }
      
   }
-
