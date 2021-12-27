@@ -1,9 +1,7 @@
 pipeline {
   agent any
  
-  tools {
-  maven 'MyMaven1'
-  }
+  
  stages {
     stage ('Build with PyTest') {
       steps {
@@ -34,6 +32,7 @@ pipeline {
   
     stage ('Code Quality') {
       steps {
+          echo "Reviewing Code"
         /* withSonarQubeEnv('SonarQube') {
         sh 'mvn -f MyWebApp/pom.xml sonar:sonar' */
         }
@@ -46,7 +45,7 @@ pipeline {
     }
     stage ('Upload Artifact') {
       steps {
-        echo Uploading Artifact
+        echo "Uploading Artifact"
 
         /* nexusArtifactUploader(
         nexusVersion: 'nexus3',
