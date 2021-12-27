@@ -40,7 +40,8 @@ pipeline {
     
     stage ('JaCoCo') {
       steps {
-      jacoco()
+          echo "JaCoCo'ing now"
+      //jacoco()
       }
     }
     stage ('Upload Artifact') {
