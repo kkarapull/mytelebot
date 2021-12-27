@@ -3,7 +3,7 @@ pipeline {
  
   
  stages {
-    stage ('Build with PyTest') {
+    /* stage ('Build with PyTest') {
       steps {
       
         sh ''' 
@@ -16,7 +16,8 @@ pipeline {
         
         //sh 'mvn clean install -f MyWebApp/pom.xml'
       }
-    }
+    }  */  
+    
     stage ('Build with UnitTest') {
       steps {
         sh '''
