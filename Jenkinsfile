@@ -74,7 +74,7 @@ pipeline {
       // deploy adapters: [tomcat9(credentialsId: '268c42f6-f2f5-488f-b2aa-f2374d229b2e', path: '', url: 'http://your_public_dns:8080')], contextPath: null, war: '**/*.war'
       }
     }
-    stage ('Slack Notification') {
+    stage ('Slack_Notification') {
       steps {
         echo "deployed to DEV Env successfully"
         //slackSend(channel:'your slack channel_name', message: "Job is successful, here is the info - Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
@@ -89,5 +89,5 @@ pipeline {
       }
     }
      
-  }
+ }
 }
